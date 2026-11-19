@@ -173,7 +173,7 @@ RUN apt-get update && apt-get install -y \
     libgtk-3-0 \
     libgl1-mesa-glx
 
-RUN git clone https://github.com/israel05/transporteBeta1.git
+RUN git clone https://github.com/israel05/transportes-vlibre.git
 
 WORKDIR /transporteBeta1
 RUN mvn package

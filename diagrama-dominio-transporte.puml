@@ -1,0 +1,182 @@
+@startuml
+title Diagrama de dominio - Sistema de gestión de transportes
+
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam linetype ortho
+left to right direction
+
+' ====== Actores / roles ======
+class Administrador
+class Gestor
+class Conductor
+
+' ====== Autenticación ======
+class Login {
+  +usuario
+  +password
+  +rol
+}
+
+Administrador --> Login
+Gestor --> Login
+Conductor --> Login
+
+' ====== Entidades principales ======
+class Empresa {
+  +cif
+  +nombre
+  +domicilio
+  +pais
+  +provincia
+  +localidad
+  +codigoPostal
+  +correo
+  +telefono
+  +personaContacto
+}
+
+class Conductor {
+  +dni
+  +nombre
+  +apellidos
+  +telefono
+  +correo
+  +contactoRecogida
+  +esInternacional
+  +nacionalidad
+  +motivoListaNegra
+}
+
+class Carnet {
+  +tipoCarnet
+}
+
+class DocumentoCapacitacion {
+  +codigoCapacitacion
+  +peligrosidad
+  +foto
+}
+
+class Vehiculo {
+  +codigoVehiculo
+  +MMA
+  +dimensionA
+  +dimensionL
+  +dimensionH
+  +cargaUtil
+}
+
+class TipoVehiculo {
+  +codigoTipoVehiculo
+  +estipulacion
+  +instrucciones
+  +puedeATP
+  +puedeADR
+  +tieneRampa
+}
+
+class SistemaCargaVehiculo {
+  +codigoSistemaCarga
+  +descripcion
+}
+
+class TipoBulto {
+  +codigoTipoBulto
+  +nombreBulto
+}
+
+class NaturalezaPeligrosa {
+  +codigo
+  +descripcion
+}
+
+class Pais
+class Provincia
+class Localidad
+class CodigoPostal
+
+class CargaYEntrega {
+  +codigoCarga
+  +franjaRecogida
+  +franjaEntrega
+  +dimensionL
+  +dimensionA
+  +dimensionH
+  +pesoUnitario
+  +manipulacionCarga
+  +remontable
+  +dobleConductor
+  +cargaCompletaOGrupaje
+  +necesitaRampa
+  +naturalezaPeligrosa
+  +localidadOrigen
+  +provinciaOrigen
+  +paisOrigen
+  +cpOrigen
+  +localidadDestino
+  +provinciaDestino
+  +paisDestino
+  +cpDestino
+  +instrucciones
+  +reembolso
+  +conVuelta
+  +precio
+  +seguro
+  +esADR
+  +esATP
+  +yaReservado
+  +cantidadBultos
+  +fechaCreacion
+}
+
+class Envio {
+  +codTracking
+  +codCargaEntrega
+  +codConductor
+  +codVehiculo
+}
+
+' ====== Relaciones ======
+Login --> Conductor
+Login --> Gestor
+Login --> Administrador
+Login --> Empresa
+
+Gestor --> Empresa
+Administrador --> Empresa
+Administrador --> Vehiculo
+Administrador --> Conductor
+
+Empresa "1" -- "0..*" CargaYEntrega : gestiona
+Empresa "1" -- "0..*" Envio : solicita
+
+Conductor "1" -- "0..*" CargaYEntrega : acepta / recibe
+Conductor "1" -- "0..*" Vehiculo : asigna / utiliza
+Conductor "1" -- "0..*" DocumentoCapacitacion : tiene
+Conductor "1" -- "1" Carnet : posee
+
+Vehiculo "*" --> "1" TipoVehiculo : pertenece a
+TipoVehiculo "1" --> "1" SistemaCargaVehiculo : usa
+
+CargaYEntrega "*" --> "1" TipoBulto : tiene
+CargaYEntrega "*" --> "1" NaturalezaPeligrosa : requiere
+CargaYEntrega "1" --> "1" Envio : genera
+Envio "*" --> "1" Vehiculo : asignado a
+Envio "*" --> "1" Conductor : asignado a
+
+CargaYEntrega --> Pais : origen
+CargaYEntrega --> Provincia : origen
+CargaYEntrega --> Localidad : origen
+CargaYEntrega --> CodigoPostal : origen
+
+CargaYEntrega --> Pais : destino
+CargaYEntrega --> Provincia : destino
+CargaYEntrega --> Localidad : destino
+CargaYEntrega --> CodigoPostal : destino
+
+Pais "1" --> "*" Provincia
+Provincia "1" --> "*" Localidad
+Localidad "1" --> "*" CodigoPostal
+
+@enduml

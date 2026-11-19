@@ -1,0 +1,53 @@
+@startuml
+hide footbox
+autonumber
+
+title Secuencia: Reservar una carga siendo conductor
+
+actor Conductor
+participant "LoginController" as LoginCtrl
+participant "GestionVehiculoController" as GestionVehiculo
+participant "CrearEnvioController" as CrearEnvio
+participant "DaoCargaYEntrega" as DaoCarga
+participant "DaoEnvio" as DaoEnvio
+participant "Base de datos" as BD
+participant "JasperReports / PDF" as PDF
+
+Conductor -> LoginCtrl: Iniciar sesión como conductor
+LoginCtrl -> LoginCtrl: validarLogin("conductor")
+alt Login válido
+    LoginCtrl -> GestionVehiculo: abreLaVentanaDe("gestionVehiculo")
+    GestionVehiculo -> GestionVehiculo: initialize(usuario)
+    Conductor -> GestionVehiculo: Selecciona filtros de origen/destino/fechas
+    Conductor -> GestionVehiculo: Consulta cargas disponibles
+    GestionVehiculo -> DaoCarga: cargarListadoEntregaYCargaSQL(sql, false)
+    DaoCarga -> BD: SELECT CARGA_Y_ENTREGA WHERE ...
+    BD --> DaoCarga: listado de cargas disponibles
+    DaoCarga --> GestionVehiculo: cargas filtradas
+    GestionVehiculo --> Conductor: Muestra tabla de cargas
+
+    Conductor -> CrearEnvio: Doble clic sobre una carga
+    CrearEnvio -> CrearEnvio: mostrar confirmación
+    alt Confirma reserva
+        CrearEnvio -> CrearEnvio: realizarReserva(conductor, vehiculo, carga, codigoTracking)
+        CrearEnvio -> DaoEnvio: nuevoEnvio(modeloEnvio)
+        DaoEnvio -> BD: INSERT INTO ENVIO (...)
+        BD --> DaoEnvio: envío creado
+        DaoEnvio --> CrearEnvio: confirmación
+
+        CrearEnvio -> DaoCarga: marcarComoPedido(cod_carga, cp_destino)
+        DaoCarga -> BD: UPDATE CARGA_Y_ENTREGA SET ya_reservado = 1
+        BD --> DaoCarga: carga marcada como reservada
+        DaoCarga --> CrearEnvio: confirmación
+
+        CrearEnvio -> CrearEnvio: mostrarTablaCargarYEntregas()
+        CrearEnvio -> PDF: lanzarInformePDFConLaReservaHecha(codigoTracking)
+        PDF -> PDF: Genera el ticket PDF del envío
+        CrearEnvio -> Conductor: Muestra confirmación y documento
+    else Cancela reserva
+        CrearEnvio --> Conductor: Reserva cancelada
+    end
+else Login no válido
+    LoginCtrl --> Conductor: Error de autenticación
+end
+@enduml

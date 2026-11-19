@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+          prefHeight="400.0" prefWidth="467.0" stylesheets="@../css/estilos.css"   xmlns="http://javafx.com/javafx/23.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.israeldelamo.transportes.controladores.SeleccionOrigenesController">
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="474.0" minWidth="10.0" prefWidth="432.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints maxHeight="129.0" minHeight="0.0" prefHeight="45.2" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="354.2" minHeight="10.0" prefHeight="354.2" vgrow="SOMETIMES" />
+    </rowConstraints>
+    <Label text="DOBLE CLICK PARA AÑADIR UN ORIGEN" GridPane.halignment="CENTER">
+        <font>
+            <Font name="System Bold" size="20.0" />
+        </font>
+    </Label>
+    <TableView fx:id="tv_origenes" prefHeight="284.0" prefWidth="467.0" GridPane.rowIndex="1">
+        <columns>
+            <TableColumn fx:id="tc_pais_tv_origenes" prefWidth="141.0" text="País" />
+            <TableColumn fx:id="tc_provincia_tv_origenes" prefWidth="107.0" text="Provincia" />
+            <TableColumn fx:id="tc_localidad_tv_origenes" prefWidth="107.0" text="Localidad" />
+        </columns>
+    </TableView>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</GridPane>

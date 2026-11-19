@@ -1,0 +1,71 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+skinparam shadowing false
+skinparam linetype polyline
+
+title Casos de uso - Sistema de gestión de transportes
+
+actor Administrador
+actor Gestor
+actor Conductor
+
+rectangle "Aplicación de transporte" {
+    usecase "Iniciar sesión" as UC01
+    usecase "Cerrar sesión" as UC02
+    usecase "Visualizar tutorial" as UC03
+
+    usecase "Gestionar conductores" as UC10
+    usecase "Gestionar vehículos" as UC11
+    usecase "Gestionar empresas" as UC12
+    usecase "Gestionar cargas y entregas" as UC13
+    usecase "Gestionar localizaciones" as UC14
+    usecase "Consultar envíos" as UC15
+    usecase "Crear envío" as UC16
+    usecase "Asignar conductor y vehículo" as UC17
+    usecase "Consultar informes" as UC18
+    usecase "Ver pedidos asignados" as UC19
+    usecase "Registrar entrega" as UC20
+    usecase "Actualizar estado del vehículo" as UC21
+}
+
+Administrador --> UC01
+Gestor --> UC01
+Conductor --> UC01
+
+Administrador --> UC02
+Gestor --> UC02
+Conductor --> UC02
+
+Administrador --> UC03
+Gestor --> UC03
+Conductor --> UC03
+
+Administrador --> UC10
+Administrador --> UC11
+Administrador --> UC12
+Administrador --> UC13
+Administrador --> UC14
+Administrador --> UC15
+Administrador --> UC16
+Administrador --> UC17
+Administrador --> UC18
+
+Gestor --> UC13
+Gestor --> UC15
+Gestor --> UC16
+Gestor --> UC17
+Gestor --> UC18
+
+Conductor --> UC19
+Conductor --> UC20
+Conductor --> UC21
+
+UC16 ..> UC13 : incluye
+UC16 ..> UC17 : incluye
+UC17 ..> UC10 : usa
+UC17 ..> UC11 : usa
+UC20 ..> UC15 : consulta
+UC19 ..> UC15 : consulta
+
+@enduml

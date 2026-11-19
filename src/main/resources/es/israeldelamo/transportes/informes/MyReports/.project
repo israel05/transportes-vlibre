@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>MyReports</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>net.sf.jasperreports.builder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+		<nature>net.sf.jasperreports.nature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>20UltimasCargasCreadas.jasper</name>
+			<type>1</type>
+			<location>D:/proyectos/proyectos desde Azure/ProyectoTransporte/src/main/resources/es/israeldelamo/transportes/informes/20UltimasCargasCreadas.jasper</location>
+		</link>
+		<link>
+			<name>20UltimasCargasCreadas.jrxml</name>
+			<type>1</type>
+			<location>D:/proyectos/proyectos desde Azure/ProyectoTransporte/src/main/resources/es/israeldelamo/transportes/informes/20UltimasCargasCreadas.jrxml</location>
+		</link>
+		<link>
+			<name>CargasPorDestino.jasper</name>
+			<type>1</type>
+			<location>D:/proyectos/proyectos desde Azure/ProyectoTransporte/src/main/resources/es/israeldelamo/transportes/informes/CargasPorDestino.jasper</location>
+		</link>
+		<link>
+			<name>CargasPorDestino.jrxml</name>
+			<type>1</type>
+			<location>D:/proyectos/proyectos desde Azure/ProyectoTransporte/src/main/resources/es/israeldelamo/transportes/informes/CargasPorDestino.jrxml</location>
+		</link>
+		<link>
+			<name>CargasPorOrigen.jasper</name>
+			<type>1</type>
+			<location>D:/proyectos/proyectos desde Azure/ProyectoTransporte/src/main/resources/es/israeldelamo/transportes/informes/CargasPorOrigen.jasper</location>
+		</link>
+		<link>
+			<name>CargasPorOrigen.jrxml</name>
+			<type>1</type>
+			<location>D:/proyectos/proyectos desde Azure/ProyectoTransporte/src/main/resources/es/israeldelamo/transportes/informes/CargasPorOrigen.jrxml</location>
+		</link>
+		<link>
+			<name>ConductorTieneVehiculo.jasper</name>
+			<type>1</type>
+			<location>D:/proyectos/proyectos desde Azure/ProyectoTransporte/src/main/resources/es/israeldelamo/transportes/informes/ConductorTieneVehiculo.jasper</location>
+		</link>
+		<link>
+			<name>ConductorTieneVehiculo_1.jasper</name>
+			<type>1</type>
+			<location>D:/proyectos/proyectos desde Azure/ProyectoTransporte/src/main/resources/es/israeldelamo/transportes/informes/ConductorTieneVehiculo.jasper</location>
+		</link>
+		<link>
+			<name>Conductores.jasper</name>
+			<type>1</type>
+			<location>D:/proyectos/proyectos desde Azure/ProyectoTransporte/src/main/resources/es/israeldelamo/transportes/informes/Conductores.jasper</location>
+		</link>
+		<link>
+			<name>Conductores.jrxml</name>
+			<type>1</type>
+			<location>D:/proyectos/proyectos desde Azure/ProyectoTransporte/src/main/resources/es/israeldelamo/transportes/informes/Conductores.jrxml</location>
+		</link>
+		<link>
+			<name>ConductoresYSusVehiculos.jasper</name>
+			<type>1</type>
+			<location>D:/proyectos/proyectos desde Azure/ProyectoTransporte/src/main/resources/es/israeldelamo/transportes/informes/ConductoresYSusVehiculos.jasper</location>
+		</link>
+		<link>
+			<name>ConductoresYSusVehiculos.jrxml</name>
+			<type>1</type>
+			<location>D:/proyectos/proyectos desde Azure/ProyectoTransporte/src/main/resources/es/israeldelamo/transportes/informes/ConductoresYSusVehiculos.jrxml</location>
+		</link>
+		<link>
+			<name>Empresas.jasper</name>
+			<type>1</type>
+			<location>D:/proyectos/proyectos desde Azure/ProyectoTransporte/src/main/resources/es/israeldelamo/transportes/informes/Empresas.jasper</location>
+		</link>
+		<link>
+			<name>Empresas.jrxml</name>
+			<type>1</type>
+			<location>D:/proyectos/proyectos desde Azure/ProyectoTransporte/src/main/resources/es/israeldelamo/transportes/informes/Empresas.jrxml</location>
+		</link>
+		<link>
+			<name>EnvioPorFechas.jasper</name>
+			<type>1</type>
+			<location>D:/proyectos/proyectos desde Azure/ProyectoTransporte/src/main/resources/es/israeldelamo/transportes/informes/EnvioPorFechas.jasper</location>
+		</link>
+		<link>
+			<name>EnvioPorFechas.jrxml</name>
+			<type>1</type>
+			<location>D:/proyectos/proyectos desde Azure/ProyectoTransporte/src/main/resources/es/israeldelamo/transportes/informes/EnvioPorFechas.jrxml</location>
+		</link>
+		<link>
+			<name>EnvioUnico.jasper</name>
+			<type>1</type>
+			<location>D:/proyectos/proyectos desde Azure/ProyectoTransporte/src/main/resources/es/israeldelamo/transportes/informes/EnvioUnico.jasper</location>
+		</link>
+		<link>
+			<name>EnvioUnico.jrxml</name>
+			<type>1</type>
+			<location>D:/proyectos/proyectos desde Azure/ProyectoTransporte/src/main/resources/es/israeldelamo/transportes/informes/EnvioUnico.jrxml</location>
+		</link>
+		<link>
+			<name>InformeEnviosDetalle.jasper</name>
+			<type>1</type>
+			<location>D:/proyectos/proyectos desde Azure/ProyectoTransporte/src/main/resources/es/israeldelamo/transportes/informes/InformeEnviosDetalle.jasper</location>
+		</link>
+		<link>
+			<name>InformeEnviosDetalle.jrxml</name>
+			<type>1</type>
+			<location>D:/proyectos/proyectos desde Azure/ProyectoTransporte/src/main/resources/es/israeldelamo/transportes/informes/InformeEnviosDetalle.jrxml</location>
+		</link>
+		<link>
+			<name>Logins.jasper</name>
+			<type>1</type>
+			<location>D:/proyectos/proyectos desde Azure/ProyectoTransporte/src/main/resources/es/israeldelamo/transportes/informes/Logins.jasper</location>
+		</link>
+		<link>
+			<name>Logins.jrxml</name>
+			<type>1</type>
+			<location>D:/proyectos/proyectos desde Azure/ProyectoTransporte/src/main/resources/es/israeldelamo/transportes/informes/Logins.jrxml</location>
+		</link>
+		<link>
+			<name>TiposDeBultos.jasper</name>
+			<type>1</type>
+			<location>D:/proyectos/proyectos desde Azure/ProyectoTransporte/src/main/resources/es/israeldelamo/transportes/informes/TiposDeBultos.jasper</location>
+		</link>
+		<link>
+			<name>TiposDeBultos.jrxml</name>
+			<type>1</type>
+			<location>D:/proyectos/proyectos desde Azure/ProyectoTransporte/src/main/resources/es/israeldelamo/transportes/informes/TiposDeBultos.jrxml</location>
+		</link>
+		<link>
+			<name>TiposDeVehiculos.jasper</name>
+			<type>1</type>
+			<location>D:/proyectos/proyectos desde Azure/ProyectoTransporte/src/main/resources/es/israeldelamo/transportes/informes/TiposDeVehiculos.jasper</location>
+		</link>
+		<link>
+			<name>TiposDeVehiculos.jrxml</name>
+			<type>1</type>
+			<location>D:/proyectos/proyectos desde Azure/ProyectoTransporte/src/main/resources/es/israeldelamo/transportes/informes/TiposDeVehiculos.jrxml</location>
+		</link>
+		<link>
+			<name>Vehiculos.jasper</name>
+			<type>1</type>
+			<location>D:/proyectos/proyectos desde Azure/ProyectoTransporte/src/main/resources/es/israeldelamo/transportes/informes/Vehiculos.jasper</location>
+		</link>
+		<link>
+			<name>Vehiculos.jrxml</name>
+			<type>1</type>
+			<location>D:/proyectos/proyectos desde Azure/ProyectoTransporte/src/main/resources/es/israeldelamo/transportes/informes/Vehiculos.jrxml</location>
+		</link>
+	</linkedResources>
+</projectDescription>

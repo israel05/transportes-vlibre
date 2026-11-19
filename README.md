@@ -4,6 +4,10 @@ Aplicación de gestión de cargas y transporte desarrollada en Java + JavaFX par
 
 ## Descripción general
 
+![Pantalla Principal](pantallappal.png)
+
+
+
 La aplicación permite:
 
 - gestionar conductores, vehículos y empresas,

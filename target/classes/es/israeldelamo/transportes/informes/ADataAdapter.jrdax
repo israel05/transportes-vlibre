@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<jdbcDataAdapter class="net.sf.jasperreports.data.jdbc.JdbcDataAdapterImpl">
+	<name>ATransportesMYSQL</name>
+	<classpath>C:\Users\IsraelLocal\Downloads\mysql-connector-j-9.7.0.jar</classpath>
+	<driver>com.mysql.jdbc.Driver</driver>
+	<username>usuarioTransport</username>
+	<password>Mmv9zce5b5-2025</password>
+	<url>jdbc:mysql://212.81.197.58/transportes</url>
+	<database></database>
+	<savePassword>true</savePassword>
+	<serverAddress></serverAddress>
+</jdbcDataAdapter>

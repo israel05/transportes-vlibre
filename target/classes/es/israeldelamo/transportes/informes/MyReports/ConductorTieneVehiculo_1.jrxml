@@ -1,0 +1,80 @@
+<!-- Created with Jaspersoft Studio version 7.0.6.final using JasperReports Library version 7.0.6-5d2a603fdc6b3db8f842a83383e594f41891534d  -->
+<jasperReport name="ConductorTieneVehiculo" language="java" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ef728faf-20e6-45a8-b79b-eb3003ee08ea">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapter.jrdax"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value="dHJhbnNwb3J0ZXMuYENvbmR1Y3RvcmVzVGllbmVWZWhpY3Vsb3NgIEFTICwyMTEsMjY5LDg1Mjk5&#xa;ZjIxLTIxYmYtNDJkNy1hY2VmLThjN2M0ZTI2YzQ1Nzs="/>
+	<parameter name="IMAGE_PATH" class="java.lang.String"/>
+	<query language="sql"><![CDATA[SELECT dni,
+	nombre,
+	`MMA`,
+	cod_vehiculo
+FROM transportes.`ConductoresTieneVehiculos` GROUP BY dni]]></query>
+	<field name="dni" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="dni"/>
+		<property name="com.jaspersoft.studio.field.label" value="dni"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="CONDUCTOR"/>
+	</field>
+	<field name="nombre" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nombre"/>
+		<property name="com.jaspersoft.studio.field.label" value="nombre"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="CONDUCTOR"/>
+	</field>
+	<field name="MMA" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="MMA"/>
+		<property name="com.jaspersoft.studio.field.label" value="MMA"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="VEHICULOS"/>
+	</field>
+	<field name="cod_vehiculo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="cod_vehiculo"/>
+		<property name="com.jaspersoft.studio.field.label" value="cod_vehiculo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="VEHICULOS"/>
+	</field>
+	<background height="493">
+		<element kind="image" uuid="153f6c84-9ca5-47d2-a068-4f2a88ac7079" x="48" y="46" width="419" height="447">
+			<expression><![CDATA[$P{IMAGE_PATH}+"fondo.png"]]></expression>
+		</element>
+	</background>
+	<title height="72">
+		<element kind="frame" uuid="aede9387-1e67-4b20-8d72-910c41c32229" mode="Opaque" x="-20" y="-10" width="595" height="70" backcolor="#006699">
+			<element kind="staticText" uuid="1efc8daa-678d-4a4e-9a01-621a08324d10" x="150" y="20" width="409" height="43" forecolor="#FFFFFF" fontSize="34.0" bold="true">
+				<text><![CDATA[Conductores y vehículos]]></text>
+			</element>
+			<element kind="image" uuid="851e33b5-69f4-4eb1-8264-740c71ca9149" x="22" y="0" width="98" height="89">
+				<expression><![CDATA[$P{IMAGE_PATH}+"logoICJ.png"]]></expression>
+			</element>
+		</element>
+	</title>
+	<pageHeader height="13"/>
+	<columnHeader height="40">
+		<element kind="line" uuid="a2640eb9-5bf6-40da-a2db-040aa19dede6" x="-20" y="20" width="595" height="1" forecolor="#666666"/>
+	</columnHeader>
+	<detail>
+		<band height="38">
+			<element kind="line" uuid="7dba87a7-573a-4e8b-b342-da9b543bc19c" positionType="FixRelativeToBottom" x="0" y="9" width="555" height="1"/>
+			<element kind="textField" uuid="ec5d2718-4bc1-444b-8370-c2faf37b838a" x="0" y="10" width="100" height="20">
+				<expression><![CDATA[$F{dni}]]></expression>
+			</element>
+			<element kind="textField" uuid="24917b24-6e46-42ea-bd1e-2fad260035a0" x="100" y="10" width="100" height="20">
+				<expression><![CDATA[$F{nombre}]]></expression>
+			</element>
+			<element kind="textField" uuid="fc4b2163-0553-4326-8318-661fb841a17f" x="200" y="10" width="100" height="20">
+				<expression><![CDATA[$F{cod_vehiculo}]]></expression>
+			</element>
+			<element kind="textField" uuid="d880594c-e17b-4c16-a8ef-616c3dcf327e" x="300" y="10" width="100" height="20">
+				<expression><![CDATA[$F{MMA}]]></expression>
+			</element>
+		</band>
+	</detail>
+	<columnFooter/>
+	<pageFooter height="17">
+		<element kind="textField" uuid="a72e7cd4-9963-4a7f-b6ca-33aff77952b2" mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" hTextAlign="Right">
+			<expression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></expression>
+		</element>
+		<element kind="textField" uuid="6889cee9-fa3e-4eae-aad0-4e23fdd775fb" mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" evaluationTime="Report">
+			<expression><![CDATA[" " + $V{PAGE_NUMBER}]]></expression>
+		</element>
+		<element kind="textField" uuid="0e48e2b6-1f46-4cd0-aff5-2b1406e14e4b" x="0" y="4" width="100" height="13" pattern="EEEEE dd MMMMM yyyy">
+			<expression><![CDATA[new java.util.Date()]]></expression>
+		</element>
+	</pageFooter>
+	<summary/>
+</jasperReport>

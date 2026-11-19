@@ -1,0 +1,71 @@
+<!-- Created with Jaspersoft Studio version 7.0.6.final using JasperReports Library version 7.0.6-5d2a603fdc6b3db8f842a83383e594f41891534d  -->
+<jasperReport name="TiposDeBultos" language="java" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d80e88cd-340b-43b0-b143-02ef55362044">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapter.jrdax"/>
+	<parameter name="IMAGE_PATH" class="java.lang.String"/>
+	<query language="SQL"><![CDATA[SELECT cod_tipo_bulto,
+	nombre_bulto,
+	imagen_bulto
+FROM transportes.`TIPO_DE_BULTO`]]></query>
+	<field name="cod_tipo_bulto" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="cod_tipo_bulto"/>
+		<property name="com.jaspersoft.studio.field.label" value="cod_tipo_bulto"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="TIPO_DE_BULTO"/>
+	</field>
+	<field name="nombre_bulto" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nombre_bulto"/>
+		<property name="com.jaspersoft.studio.field.label" value="nombre_bulto"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="TIPO_DE_BULTO"/>
+	</field>
+	<field name="imagen_bulto" class="byte[]">
+		<property name="com.jaspersoft.studio.field.name" value="imagen_bulto"/>
+		<property name="com.jaspersoft.studio.field.label" value="imagen_bulto"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="TIPO_DE_BULTO"/>
+	</field>
+	<background height="389">
+		<element kind="image" uuid="c43830c5-f314-4b02-b6b2-a872aefad5ae" x="80" y="0" width="399" height="389">
+			<expression><![CDATA[$P{IMAGE_PATH}+"fondo.png"]]></expression>
+		</element>
+	</background>
+	<title height="72">
+		<element kind="frame" uuid="f58655ab-ddce-40b6-a359-a0fa0d8f0dda" mode="Opaque" x="-20" y="0" width="594" height="65" forecolor="#006699" backcolor="#006699">
+			<element kind="staticText" uuid="0a38b9ae-bca1-42b3-9a93-23a030e420b6" x="150" y="7" width="430" height="50" forecolor="#FFFFFF" fontSize="37.0" bold="false" hTextAlign="Right">
+				<text><![CDATA[Tipo de bulto]]></text>
+			</element>
+			<element kind="image" uuid="b1c49511-7d3c-463b-8a4d-e2007e5e7856" x="22" y="0" width="98" height="89">
+				<expression><![CDATA[$P{IMAGE_PATH}+"logoICJ.png"]]></expression>
+			</element>
+		</element>
+	</title>
+	<pageHeader height="13"/>
+	<columnHeader height="21">
+		<element kind="line" uuid="ccd3e15a-dd9b-4405-8138-286aa6f7d477" x="-20" y="4" width="595" height="1" forecolor="#666666"/>
+	</columnHeader>
+	<detail>
+		<band height="97">
+			<element kind="textField" uuid="fc1ab955-4b39-4b3f-87fa-f62ebb63dcd9" x="0" y="0" width="100" height="14">
+				<expression><![CDATA[$F{cod_tipo_bulto}]]></expression>
+			</element>
+			<element kind="textField" uuid="61b658a7-98df-419e-9418-a268d481d9c2" x="100" y="0" width="100" height="14">
+				<expression><![CDATA[$F{nombre_bulto}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="030a269c-c6db-4b57-bd72-0f8a61ffd6c8"/>
+			</element>
+			<element kind="image" uuid="ebf54d04-3717-4a99-8e25-0f955774a50d" x="300" y="0" width="110" height="90">
+				<expression><![CDATA[$F{imagen_bulto}]]></expression>
+			</element>
+		</band>
+	</detail>
+	<columnFooter/>
+	<pageFooter height="17">
+		<element kind="textField" uuid="7ff163da-dcc6-4af9-9c27-9b69038522fe" mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" hTextAlign="Right">
+			<expression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></expression>
+		</element>
+		<element kind="textField" uuid="219b1e46-4dbe-4f31-b7f8-a74865df4809" mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" evaluationTime="Report">
+			<expression><![CDATA[" " + $V{PAGE_NUMBER}]]></expression>
+		</element>
+		<element kind="textField" uuid="ddd8aa47-b9ee-499b-b791-3e709d829079" x="0" y="4" width="100" height="13" pattern="EEEEE dd MMMMM yyyy">
+			<expression><![CDATA[new java.util.Date()]]></expression>
+		</element>
+	</pageFooter>
+	<summary/>
+</jasperReport>

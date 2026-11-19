@@ -1,0 +1,147 @@
+<!-- Created with Jaspersoft Studio version 7.0.6.final using JasperReports Library version 7.0.6-5d2a603fdc6b3db8f842a83383e594f41891534d  -->
+<jasperReport name="TiposDeVehiculos" language="java" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e053bbe6-d566-4473-bcaa-8ed45522a52d">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapter.jrdax"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value="dHJhbnNwb3J0ZXMuYFRpcG9zRGVWZWhpY3Vsb3NZU2lzdGVtYUNhcmdhYCBBUyAsMjExLDExNiw4&#xa;YzQ2ZWZiMi00ODBkLTRjZmYtYjM1NC0xOGFiOWIwMGFjMWE7"/>
+	<parameter name="IMAGE_PATH" class="java.lang.String"/>
+	<query language="sql"><![CDATA[SELECT cod_tipo_vehiculo,
+	`SISTEMAEDCARGAVEHICULO_cod_sistem_carga`,
+	estipulacion,
+	instrucciones,
+	foto,
+	tiene_rampa,
+	puede_adr,
+	cod_sistema_carga,
+	puede_atp,
+	descripcion
+FROM transportes.`TiposDeVehiculosYSistemaCarga`]]></query>
+	<field name="cod_tipo_vehiculo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="cod_tipo_vehiculo"/>
+		<property name="com.jaspersoft.studio.field.label" value="cod_tipo_vehiculo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="TiposDeVehiculosYSistemaCarga"/>
+	</field>
+	<field name="SISTEMAEDCARGAVEHICULO_cod_sistem_carga" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="SISTEMAEDCARGAVEHICULO_cod_sistem_carga"/>
+		<property name="com.jaspersoft.studio.field.label" value="SISTEMAEDCARGAVEHICULO_cod_sistem_carga"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="TiposDeVehiculosYSistemaCarga"/>
+	</field>
+	<field name="estipulacion" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="estipulacion"/>
+		<property name="com.jaspersoft.studio.field.label" value="estipulacion"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="TiposDeVehiculosYSistemaCarga"/>
+	</field>
+	<field name="instrucciones" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="instrucciones"/>
+		<property name="com.jaspersoft.studio.field.label" value="instrucciones"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="TiposDeVehiculosYSistemaCarga"/>
+	</field>
+	<field name="foto" class="byte[]">
+		<property name="com.jaspersoft.studio.field.name" value="foto"/>
+		<property name="com.jaspersoft.studio.field.label" value="foto"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="TiposDeVehiculosYSistemaCarga"/>
+	</field>
+	<field name="tiene_rampa" class="java.lang.Boolean">
+		<property name="com.jaspersoft.studio.field.name" value="tiene_rampa"/>
+		<property name="com.jaspersoft.studio.field.label" value="tiene_rampa"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="TiposDeVehiculosYSistemaCarga"/>
+	</field>
+	<field name="puede_adr" class="java.lang.Boolean">
+		<property name="com.jaspersoft.studio.field.name" value="puede_adr"/>
+		<property name="com.jaspersoft.studio.field.label" value="puede_adr"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="TiposDeVehiculosYSistemaCarga"/>
+	</field>
+	<field name="cod_sistema_carga" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="cod_sistema_carga"/>
+		<property name="com.jaspersoft.studio.field.label" value="cod_sistema_carga"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="TiposDeVehiculosYSistemaCarga"/>
+	</field>
+	<field name="puede_atp" class="java.lang.Boolean">
+		<property name="com.jaspersoft.studio.field.name" value="puede_atp"/>
+		<property name="com.jaspersoft.studio.field.label" value="puede_atp"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="TiposDeVehiculosYSistemaCarga"/>
+	</field>
+	<field name="descripcion" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="descripcion"/>
+		<property name="com.jaspersoft.studio.field.label" value="descripcion"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="TiposDeVehiculosYSistemaCarga"/>
+	</field>
+	<background height="499">
+		<element kind="image" uuid="144897e2-06d5-4e78-8f50-237f39847ed4" x="70" y="0" width="379" height="497">
+			<expression><![CDATA[$P{IMAGE_PATH}+"fondo.png"]]></expression>
+		</element>
+	</background>
+	<title height="72">
+		<element kind="frame" uuid="b67f1a17-71a5-4a33-8425-264aa21fe431" mode="Opaque" x="-20" y="0" width="594" height="65" forecolor="#006699" backcolor="#006699">
+			<element kind="staticText" uuid="ef13c0ed-f72c-450d-a323-2a5783c45e64" x="140" y="7" width="410" height="50" forecolor="#FFFFFF" fontSize="37.0" bold="false" hTextAlign="Right">
+				<text><![CDATA[Tipo de vehículo]]></text>
+			</element>
+			<element kind="image" uuid="29de904a-6b7a-4ff6-a44e-105580c8b501" x="22" y="0" width="98" height="89">
+				<expression><![CDATA[$P{IMAGE_PATH}+"logoICJ.png"]]></expression>
+			</element>
+		</element>
+	</title>
+	<pageHeader height="13"/>
+	<columnHeader height="21">
+		<element kind="line" uuid="78fc4367-894f-4550-9ecb-407bebc79078" x="-20" y="20" width="595" height="1" forecolor="#666666"/>
+		<element kind="staticText" uuid="47136ca8-af81-4b84-8993-6adc0be6935e" x="0" y="0" width="60" height="21" bold="true">
+			<text><![CDATA[Matrícula]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="62e32a1e-0d84-4a1d-afe7-c352fdfdf879"/>
+		</element>
+		<element kind="staticText" uuid="25a2fc1d-a650-43b0-ae33-084f3ab62904" x="66" y="0" width="100" height="21" bold="true">
+			<text><![CDATA[Descripción]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7116cdd7-8ebe-499b-a121-e7026f4d403f"/>
+		</element>
+		<element kind="staticText" uuid="8fb9550a-3841-46b2-a0da-1c9d8973c696" x="173" y="0" width="100" height="21" bold="true">
+			<text><![CDATA[Instrucciones]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8109c406-2751-419d-adb1-b760c3dff10f"/>
+		</element>
+		<element kind="staticText" uuid="15e6a1c6-1d63-44d5-bc1e-b6389aa2cb29" x="300" y="0" width="30" height="21" bold="true">
+			<text><![CDATA[ADR]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b76b7516-a996-40fe-b8bc-f4d3ddb69209"/>
+		</element>
+		<element kind="staticText" uuid="e503f78b-ffa8-4a4f-9fae-bef2775fea82" x="345" y="0" width="30" height="21" bold="true">
+			<text><![CDATA[ATP]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="148fac3c-f9e1-4a9a-9c79-7d825637b461"/>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="145">
+			<element kind="line" uuid="55899049-651a-498a-9098-938185001455" positionType="FixRelativeToBottom" x="0" y="11" width="555" height="1"/>
+			<element kind="textField" uuid="8833e9d3-7012-4b54-b409-f6eb26c5b109" x="0" y="20" width="60" height="30">
+				<expression><![CDATA[$F{cod_tipo_vehiculo}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="62e32a1e-0d84-4a1d-afe7-c352fdfdf879"/>
+			</element>
+			<element kind="textField" uuid="e25db113-2ee2-417c-b45d-3df7ac7ffb99" x="66" y="20" width="100" height="30">
+				<expression><![CDATA[$F{descripcion}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7116cdd7-8ebe-499b-a121-e7026f4d403f"/>
+			</element>
+			<element kind="textField" uuid="ad350252-e3c9-4077-8a34-1070116f27d1" x="173" y="20" width="100" height="30">
+				<expression><![CDATA[$F{instrucciones}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8109c406-2751-419d-adb1-b760c3dff10f"/>
+			</element>
+			<element kind="textField" uuid="1b610fa9-5a61-4761-ac56-6e20f8464947" x="300" y="20" width="30" height="30">
+				<expression><![CDATA[$F{puede_adr}?"\u2713":"\u2717"]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b76b7516-a996-40fe-b8bc-f4d3ddb69209"/>
+			</element>
+			<element kind="textField" uuid="f469633a-4b36-4f32-ab46-cdca22360aa9" x="345" y="20" width="30" height="30">
+				<expression><![CDATA[$F{puede_atp}?"\u2713":"\u2717"]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="148fac3c-f9e1-4a9a-9c79-7d825637b461"/>
+			</element>
+			<element kind="image" uuid="51a7785e-0a64-4da0-b5a8-168b3613fbb2" x="400" y="20" width="115" height="125">
+				<expression><![CDATA[$F{foto}]]></expression>
+			</element>
+		</band>
+	</detail>
+	<columnFooter/>
+	<pageFooter height="17">
+		<element kind="textField" uuid="603715b9-af57-41e6-8dd8-5da5f801e80e" mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" hTextAlign="Right">
+			<expression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></expression>
+		</element>
+		<element kind="textField" uuid="fba84306-8529-494b-9c6a-97cea38ae493" mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" evaluationTime="Report">
+			<expression><![CDATA[" " + $V{PAGE_NUMBER}]]></expression>
+		</element>
+		<element kind="textField" uuid="4bf62975-ccfc-4e5e-8281-fb64f9862f83" x="0" y="4" width="100" height="13" pattern="EEEEE dd MMMMM yyyy">
+			<expression><![CDATA[new java.util.Date()]]></expression>
+		</element>
+	</pageFooter>
+	<summary/>
+</jasperReport>

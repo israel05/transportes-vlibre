@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <!-- 1. CONSOLA: todos los niveles -->
+    <appender name="CONSOLA"
+              class="ch.qos.logback.core.ConsoleAppender">
+
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level [%thread] %logger{36} - %msg%n</pattern>
+        </encoder>
+
+    </appender>
+
+
+    <!-- 2. ARCHIVO PEQUEÑO: INFO y ERROR -->
+    <appender name="ARCHIVO_PEQUENO"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+
+        <file>logs/pequeno.log</file>
+
+        <rollingPolicy
+                class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+
+            <fileNamePattern>logs/pequeno.%i.log</fileNamePattern>
+            <minIndex>1</minIndex>
+            <maxIndex>1</maxIndex>
+
+        </rollingPolicy>
+
+        <triggeringPolicy
+                class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+
+            <maxFileSize>1MB</maxFileSize>
+
+        </triggeringPolicy>
+
+        <!-- Solo INFO y ERROR -->
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>INFO</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level [%thread] %logger{36} - %msg%n</pattern>
+        </encoder>
+
+    </appender>
+
+
+    <!-- 3. ARCHIVO GIGANTE: todos los niveles -->
+    <appender name="ARCHIVO_GENERAL"
+              class="ch.qos.logback.core.FileAppender">
+
+        <file>logs/general.log</file>
+        <append>true</append>
+
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level [%thread] %logger{36} - %msg%n</pattern>
+        </encoder>
+
+    </appender>
+
+
+    <!-- ROOT: DEBUG permite registrar todos los niveles -->
+    <root level="DEBUG">
+        <appender-ref ref="CONSOLA"/>
+        <appender-ref ref="ARCHIVO_PEQUENO"/>
+        <appender-ref ref="ARCHIVO_GENERAL"/>
+    </root>
+
+</configuration>

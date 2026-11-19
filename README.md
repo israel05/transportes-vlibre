@@ -177,7 +177,7 @@ RUN apt-get update && apt-get install -y \
     libgtk-3-0 \
     libgl1-mesa-glx
 
-RUN git clone https://github.com/israel05/transporteBeta1.git
+RUN git clone https://github.com/israel05/transportes-vlibre.git
 
 WORKDIR /transporteBeta1
 RUN mvn package
@@ -219,5 +219,6 @@ Este repositorio combina la parte funcional (JavaFX + base de datos) con documen
 
 ## Licencia
 
-El proyecto no incluye una licencia explícita en este repositorio. Si se va a reutilizar o distribuir, conviene aclararla antes de hacerlo en producción.
+
+Este proyecto está bajo la [Licencia MIT](LICENSE).
 

@@ -215,5 +215,6 @@ Este repositorio combina la parte funcional (JavaFX + base de datos) con documen
 
 ## Licencia
 
-El proyecto no incluye una licencia explícita en este repositorio. Si se va a reutilizar o distribuir, conviene aclararla antes de hacerlo en producción.
+
+Este proyecto está bajo la [Licencia MIT](LICENSE).
 
